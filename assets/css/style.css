@@ -4,6 +4,7 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    font-family: 'Headland One', serif;
 
 }
 
@@ -13,25 +14,23 @@ body {
     width: 100%;
 }
 .jumbotron {
+    background-color: #eeba30;
     opacity: 0.9;
+    
 }
 
 .panel {
-    opacity: 0.9;
+     opacity: 0.9;
 }
 .bg {
-    background-color: rgb(22, 22, 82);
-    color: #fff;
+    background-color: #ae0001;
+    color: #d3a625;
     padding: 10px;
 }
 
-.bg-white {
-    background-color:#fff;
-    color: #000;
-    padding: 10px;
-}
+
 h1 {
-    color: rgb(22, 22, 82);
+    color: #740001;
 }
 h3 {
     color: #000;
@@ -39,20 +38,20 @@ h3 {
     font-size: large;
 }
 .h4 {
-    color: blue;
+    color: black;
     font-weight: bold;
     font-size: large;
     padding: 5px;
 }
 .button {
-    background-color: #000;
+    background-color: #ae0001;
     color: #fff;
     font-weight: bold;
     padding: 5px;
 }
 
 #newTrainBtn {
-    background-color:rgb(22, 22, 82);
+    background-color:#ae0001;
     color: white;
     border: none;
 }

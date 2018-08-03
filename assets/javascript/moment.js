@@ -13,7 +13,6 @@
     }
 
     // This is done to register the method called with moment()
-    // without creating circular dependencies.
     function setHookCallback (callback) {
         hookCallback = callback;
     }
@@ -23,8 +22,6 @@
     }
 
     function isObject(input) {
-        // IE8 will treat undefined and null as object if it wasn't for
-        // input != null
         return input != null && Object.prototype.toString.call(input) === '[object Object]';
     }
 
@@ -89,7 +86,7 @@
     }
 
     function defaultParsingFlags() {
-        // We need to deep clone this object.
+        // .
         return {
             empty           : false,
             unusedTokens    : [],
@@ -179,8 +176,7 @@
         return m;
     }
 
-    // Plugins that add properties should also add the key here (null value),
-    // so we can properly clone ourselves.
+    
     var momentProperties = hooks.momentProperties = [];
 
     function copyConfig(to, from) {
@@ -232,15 +228,14 @@
 
     var updateInProgress = false;
 
-    // Moment prototype object
+
     function Moment(config) {
         copyConfig(this, config);
         this._d = new Date(config._d != null ? config._d.getTime() : NaN);
         if (!this.isValid()) {
             this._d = new Date(NaN);
         }
-        // Prevent infinite loop in case updateOffset creates new moment
-        // objects.
+        
         if (updateInProgress === false) {
             updateInProgress = true;
             hooks.updateOffset(this);
@@ -354,9 +349,7 @@
             }
         }
         this._config = config;
-        // Lenient ordinal parsing accepts just a number in addition to
-        // number + (possibly) stuff coming from _dayOfMonthOrdinalParse.
-        // TODO: Remove "ordinalParse" fallback in next major release.
+        
         this._dayOfMonthOrdinalParseLenient = new RegExp(
             (this._dayOfMonthOrdinalParse.source || this._ordinalParse.source) +
                 '|' + (/\d{1,2}/).source);

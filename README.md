@@ -1,4 +1,4 @@
-# TrainSchedule
+# Howgwarts Train Scheduler!
 
 This is train scheduler app for entering and storing the data realtime for the following fields:
 
